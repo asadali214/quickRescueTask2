@@ -12,8 +12,6 @@
 	<name>quickRescue-ejb</name>
 	<description>quickRescue ejb module</description>
 
-
-
 	<dependencies>
 		<dependency>
 			<groupId>javax</groupId>
@@ -30,6 +28,7 @@
 		</dependency>
 
 	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -44,18 +43,18 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.5.1</version>
+				<version>3.7.0</version>
 				<configuration>
-					<!-- enforce Java 6 -->
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
+			
 			<!-- WildFly plugin to deploy the application -->
 			<plugin>
 				<groupId>org.wildfly.plugins</groupId>
 				<artifactId>wildfly-maven-plugin</artifactId>
-				<version>1.1.0.Alpha9</version>
+				<version>1.2.2.Final</version>
 				<configuration>
 					<filename>${project.artifactId}-${project.version}.jar</filename>
 				</configuration>
