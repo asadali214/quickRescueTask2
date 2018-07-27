@@ -10,5 +10,6 @@
   
   <modules>
   	<module>quickRescue-ejb</module>
+  	<module>quickRescue-ejb-client</module>
   </modules>
 </project>
