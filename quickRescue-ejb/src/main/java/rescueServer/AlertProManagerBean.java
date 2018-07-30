@@ -14,7 +14,7 @@ public class AlertProManagerBean implements AlertProManagerBeanRemote {
      * Default constructor. 
      */
     public AlertProManagerBean() {
-        // TODO Auto-generated constructor stub
+    	System.out.println("Account Constructor Called!");
     }
 
 }

@@ -4,17 +4,15 @@ import java.util.ArrayList;
 
 import javax.ejb.Remote;
 
-import entities.Account;
-
 @Remote
 public interface AccountManagerBeanRemote {
-	public ArrayList<Account> viewAllAccounts();
+	public ArrayList<Object> viewAllAccounts();
 
-	public int addNewAccount(Account account);
+	public int addNewAccount(Object account);
 
-	public Account updateAccount(int id, Account accountNew);
+	public Object updateAccount(int id, Object accountNew);
 
 	public void deleteAccount(int id);
 	
-	public Account getAccount(int id);
+	public Object getAccount(int id);
 }

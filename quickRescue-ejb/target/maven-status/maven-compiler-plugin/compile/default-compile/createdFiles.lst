@@ -1,0 +1,10 @@
+rescueServer\AccountManagerBean.class
+rescueServer\AccountManagerBeanRemote.class
+rescueServer\SessionFactoryManager.class
+entities\Contact.class
+rescueServer\ContactManagerBean.class
+rescueServer\ContactManagerBeanRemote.class
+entities\Address.class
+entities\Account.class
+rescueServer\AlertProManagerBeanRemote.class
+rescueServer\AlertProManagerBean.class

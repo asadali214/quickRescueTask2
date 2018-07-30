@@ -5,7 +5,12 @@ import java.util.ArrayList;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
 import entities.Account;
+
 
 /**
  * Session Bean implementation class AccountManagerBean
@@ -14,41 +19,38 @@ import entities.Account;
 @LocalBean
 public class AccountManagerBean implements AccountManagerBeanRemote {
 
-    /**
-     * Default constructor. 
-     */
+	//private SessionFactory factory;
     public AccountManagerBean() {
-        // TODO Auto-generated constructor stub
+    	System.out.println("Account Constructor Called!");
+    	//factory= SessionFactoryManager.getSessionfac();
     }
-
 	@Override
-	public ArrayList<Account> viewAllAccounts() {
-		// TODO Auto-generated method stub
+	public ArrayList<Object> viewAllAccounts() {
+		
 		return null;
 	}
-
 	@Override
-	public int addNewAccount(Account account) {
-		// TODO Auto-generated method stub
+	public int addNewAccount(Object account) {
+		System.out.println("session is called");
+		
 		return 0;
 	}
-
 	@Override
-	public Account updateAccount(int id, Account accountNew) {
+	public Object updateAccount(int id, Object accountNew) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 	@Override
 	public void deleteAccount(int id) {
 		// TODO Auto-generated method stub
 		
 	}
-
 	@Override
-	public Account getAccount(int id) {
+	public Object getAccount(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
 
 }

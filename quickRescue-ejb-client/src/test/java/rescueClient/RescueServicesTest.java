@@ -54,15 +54,15 @@ public class RescueServicesTest {
 	public void testViewAllAccounts() {// dependent on addNewAccount()
 		
 		insertDummyData();
-		ArrayList<Account> output = RescueServices.viewAllAccounts();
+		ArrayList<Object> output = RescueServices.viewAllAccounts();
 		ArrayList<Account> expected = new ArrayList<Account>();
 		expected.add(dummyAccount1);
 		assertEquals(expected.size(), output.size());
 		for (int i = 0; i < output.size(); i++) {
-			assertEquals(expected.get(i).getId(), output.get(i).getId());
-			assertEquals(expected.get(i).getName(), output.get(i).getName());
-			assertEquals(expected.get(i).getEmailDomain(), output.get(i).getEmailDomain());
-			assertEquals(expected.get(i).getTimeZoneCity(), output.get(i).getTimeZoneCity());
+			assertEquals(expected.get(i).getId(), ((Account) output.get(i)).getId());
+			assertEquals(expected.get(i).getName(), ((Account) output.get(i)).getName());
+			assertEquals(expected.get(i).getEmailDomain(), ((Account) output.get(i)).getEmailDomain());
+			assertEquals(expected.get(i).getTimeZoneCity(), ((Account) output.get(i)).getTimeZoneCity());
 		}
 		deleteDummyData();
 
@@ -117,7 +117,7 @@ public class RescueServicesTest {
 	@Test
 	public void testViewAllContactsOfAccount() {
 		insertDummyData();
-		ArrayList<Contact> output = RescueServices.viewAllContactsOfAccount(dummyAccount1.getId());
+		ArrayList<Object> output = RescueServices.viewAllContactsOfAccount(dummyAccount1.getId());
 		ArrayList<Contact> expected = new ArrayList<Contact>();
 		expected.add(dummyContact1);
 		expected.add(dummyContact2);
@@ -197,7 +197,7 @@ public class RescueServicesTest {
 	@Test
 	public void testDeleteAllContactsOfAccount() {
 		insertDummyData();
-		Account account = RescueServices.viewAllAccounts().get(0);
+		Account account = (Account) RescueServices.viewAllAccounts().get(0);
 
 		int contactsizeBeforeDeletionExpected = 0;// 0 contacts for that account as we are deleting all the contacts
 		RescueServices.deleteAllContactsOfAccount(account.getId());

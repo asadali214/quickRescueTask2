@@ -26,7 +26,7 @@ public class RescueServices {
 		}
 	}
 
-	public static ArrayList<Account> viewAllAccounts() {
+	public static ArrayList<Object> viewAllAccounts() {
 		return accountBean.viewAllAccounts();
 	}
 
@@ -35,7 +35,7 @@ public class RescueServices {
 	}
 
 	public static Account updateAccount(int id, Account accountNew) {
-		return accountBean.updateAccount(id, accountNew);
+		return (Account) accountBean.updateAccount(id, accountNew);
 	}
 
 	public static void deleteAccount(int id) {
@@ -43,10 +43,10 @@ public class RescueServices {
 	}
 	
 	public static Account getAccount(int id) {
-		return accountBean.getAccount(id);
+		return (Account) accountBean.getAccount(id);
 	}
 
-	public static ArrayList<Contact> viewAllContactsOfAccount(int AccountId) {
+	public static ArrayList<Object> viewAllContactsOfAccount(int AccountId) {
 		return contactBean.viewAllContactsOfAccount(AccountId);
 	}
 
@@ -55,7 +55,7 @@ public class RescueServices {
 	}
 
 	public static Contact updateContactOfAccount(int ContactId, Contact contactNew) {
-		return contactBean.updateContactOfAccount(ContactId, contactNew);
+		return (Contact) contactBean.updateContactOfAccount(ContactId, contactNew);
 	}
 
 	public static void deleteContactOfAccount(int contactId) {
@@ -68,7 +68,7 @@ public class RescueServices {
 	}
 
 	public static Contact getContact(int id) {
-		return contactBean.getContact(id);
+		return (Contact) contactBean.getContact(id);
 	}
 	public static void setUpServices() {
 		new RescueServices();//this will get all the beans 
@@ -76,6 +76,8 @@ public class RescueServices {
 	}
 
 	public static void main(String[] args) {
+		setUpServices();
+		
 		int resultedID = accountBean.addNewAccount(null);
 		System.out.println("main: gotten account id is " + resultedID);
 	}

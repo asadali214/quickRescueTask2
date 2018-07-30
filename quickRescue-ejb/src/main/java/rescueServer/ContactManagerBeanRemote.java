@@ -4,19 +4,18 @@ import java.util.ArrayList;
 
 import javax.ejb.Remote;
 
-import entities.Contact;
 
 @Remote
 public interface ContactManagerBeanRemote {
-	public ArrayList<Contact> viewAllContactsOfAccount(int AccountId);
+	public ArrayList<Object> viewAllContactsOfAccount(int AccountId);
 
-	public int addContactinAccount(Contact contact, int AccountID);
+	public int addContactinAccount(Object contact, int AccountID);
 
-	public Contact updateContactOfAccount(int ContactId, Contact contactNew);
+	public Object updateContactOfAccount(int ContactId, Object contactNew);
 
 	public void deleteContactOfAccount(int contactId);
 
 	public void deleteAllContactsOfAccount(int AccountId);
 
-	public Contact getContact(int id);
+	public Object getContact(int id);
 }

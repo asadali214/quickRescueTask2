@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 
-import entities.Contact;
-
 /**
  * Session Bean implementation class ConatactManagerBean
  */
@@ -18,23 +16,23 @@ public class ContactManagerBean implements ContactManagerBeanRemote {
      * Default constructor. 
      */
     public ContactManagerBean() {
-        // TODO Auto-generated constructor stub
+    	System.out.println("Contact Constructor Called!");
     }
 
 	@Override
-	public ArrayList<Contact> viewAllContactsOfAccount(int AccountId) {
+	public ArrayList<Object> viewAllContactsOfAccount(int AccountId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public int addContactinAccount(Contact contact, int AccountID) {
+	public int addContactinAccount(Object contact, int AccountID) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public Contact updateContactOfAccount(int ContactId, Contact contactNew) {
+	public Object updateContactOfAccount(int ContactId, Object contactNew) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -52,9 +50,11 @@ public class ContactManagerBean implements ContactManagerBeanRemote {
 	}
 
 	@Override
-	public Contact getContact(int id) {
+	public Object getContact(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
 
 }
